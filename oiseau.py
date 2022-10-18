@@ -17,19 +17,19 @@ class Oiseau:
         self.blinking = 0
 
         self.vitesse = 0
-        self.acceleration = 0.10
+        self.acceleration = 0.40
 
         self.maxSaut = 12
 
     def jump(self):
-        self.vitesse = (self.vitesse - 35) * 0.5
+        self.vitesse = (self.vitesse - 35) * 0.4
         if self.vitesse < -self.maxSaut:
             self.vitesse = -self.maxSaut
 
     def update(self):
         self.frame = self.frame + 1
         self.vitesse = self.vitesse + self.acceleration
-        self.vitesse = self.vitesse * 0.965
+        self.vitesse = self.vitesse * 0.960
         self.y = self.y + self.vitesse
         if self.y > 500:
             self.y = 0
